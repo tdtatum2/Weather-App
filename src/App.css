@@ -18,18 +18,111 @@ body {
 
 .weather {
   height: 100vh;
-  background-color: #0c0c0c;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(./assets/mountains.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.weather::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #0c0c0c;
+  z-index: 2;
+  opacity: 0.01;
+}
+
+.card {
+  background-color: rgba(5, 5, 5, 0.75);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  z-index: 99;
+  border-radius: 20px;
+  min-width: 35%;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;  
+}
+
+.search-box input, .search-box button, .search-box svg {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1;
+  color: #fff;
+  background-color: transparent;
+}
+
+
+::placeholder {
+  color: #fff;
+}
+
+ .card-main {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.weather-card {
-  /* width: 300px;
-  height: 400px;
-  background: #fff;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */ 
+.top-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 5%;
+}
+
+.degrees-switch, .lighting-mode-switch {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  z-index: 99;
+}
+
+.degrees-switch {
+  top: 10px;
+  right: 10px;
+}
+
+.lighting-mode-switch {
+  top: 10px;
+  left: 10px;
+}
+
+
+.current-temp {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.bold {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+
+.form-check-input:checked {
+  background-color: #474747;
+  border: none;
+}
+
+.form-check-input:focus, .form-check-input:active {
+  border: none;
+  box-shadow: none;
+  filter: none;
 }
